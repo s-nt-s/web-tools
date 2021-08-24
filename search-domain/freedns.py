@@ -37,13 +37,9 @@ error = None
 res = []
 for d in domains:
     if d.public and d.old > 7 and d.is_cool():
-        try:
-            if d.recent_letsencrypt < 20:
-                print (d.dom)
-                res.append(d)
-        except Exception as e:
-            error = e
-            break
+        if d.recent_letsencrypt < 20:
+            print (d.dom)
+            res.append(d)
 
 if arg.out:
     Domain.store(arg.out, res)
