@@ -5,6 +5,7 @@
 
     <xsl:param name="title" />
     <xsl:param name="header" />
+    <xsl:param name="path" />
     <xsl:param name="color-base00" />
     <xsl:param name="color-base07" />
     <xsl:param name="color-base0D" />
@@ -166,6 +167,9 @@ html {
                   <header><xsl:value-of select="$header" disable-output-escaping="yes"/></header>
                 </xsl:if>
                 <ol aria-label="asset list" is="asset-list" class="asset-list">
+                    <xsl:if test="$path!='' and $path!='/'">
+                    <li class="asset-link asset-link--directory"><a href="../">../</a></li>
+                    </xsl:if>
                     <xsl:for-each select="list/*">
                     <xsl:if test="text() != 'favicon.ico'">
                         <li is="asset-item">
