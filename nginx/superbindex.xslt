@@ -4,6 +4,7 @@
     <xsl:output method="html" encoding="UTF-8" />
 
     <xsl:param name="title" />
+    <xsl:param name="header" />
     <xsl:param name="color-base00" />
     <xsl:param name="color-base07" />
     <xsl:param name="color-base0D" />
@@ -161,6 +162,9 @@ html {
                 </xsl:if>
             </head>
             <body>
+                <xsl:if test="$header != ''">
+                  <header><xsl:value-of select="$header" disable-output-escaping="yes"/></header>
+                </xsl:if>
                 <ol aria-label="asset list" is="asset-list" class="asset-list">
                     <xsl:for-each select="list/*">
                     <xsl:if test="text() != 'favicon.ico'">
