@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:str="http://exslt.org/strings">
     <xsl:output method="html" encoding="UTF-8" />
 
     <xsl:param name="title" />
@@ -195,7 +196,7 @@ a {
                                 </xsl:attribute>
 
                                 <xsl:attribute name="href">
-                                    <xsl:value-of select="." />
+                                    <xsl:value-of select="str:encode-uri(.,true())" />
                                     <xsl:if test="name() = 'directory'">
                                         <xsl:text>/</xsl:text>
                                     </xsl:if>
