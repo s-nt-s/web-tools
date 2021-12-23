@@ -45,7 +45,8 @@
                 <meta name="version" content="2.0.1" />
                 <meta name="viewport" content="initial-scale=1, shrink-to-fit=no, viewport-fit=cover, width=device-width, height=device-height" />
 
-                <style><![CDATA[:root {
+                <style><![CDATA[
+:root {
 	--color-base00: #FFFFFF;
 	--color-base07: #202020;
 	--color-base0D: #3777E6;
@@ -85,7 +86,7 @@ html {
 	padding: 0
 }
 
-//.asset-item {display: block}
+/*.asset-item {display: block}*/
 
 .asset-item--directory {
 	color: var(--theme-link-directory)
@@ -148,7 +149,8 @@ html {
 .asset-item--filtered>.asset-link:focus,
 .asset-item--filtered>.asset-link:hover {
 	opacity: 1
-}]]></style>
+}
+]]></style>
 
                 <xsl:if test="normalize-space($custom-colors) != ''">
                     <style>
@@ -201,7 +203,8 @@ html {
                     </xsl:for-each>
                 </ol>
 
-                <script><![CDATA[const CustomElement = ParentClass => class CustomElement extends ParentClass {
+                <script><![CDATA[
+const CustomElement = ParentClass => class CustomElement extends ParentClass {
     static define() {
         customElements.define(this.tagName, this, {
             extends: this.tagType
@@ -314,7 +317,8 @@ function main() {
     AssetItem.define();
     AssetList.define()
 }
-document.addEventListener("DOMContentLoaded", main);]]></script>
+document.addEventListener("DOMContentLoaded", main);
+]]></script>
             </body>
         </html>
     </xsl:template>
