@@ -73,13 +73,18 @@
 	box-sizing: border-box
 }
 
-/*body {margin: 3.5rem}*/
-
 html {
 	background-color: var(--theme-background);
 	font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-	font-size: 100%
+	font-size: 100%;
+	color: var(--color-base07);
 }
+a {
+  color: var(--color-base0E);
+}
+
+
+/*body {margin: 3.5rem}*/
 
 .asset-list {
 	/*display: block;*/
